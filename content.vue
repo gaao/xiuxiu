@@ -42,22 +42,8 @@ function changeCharacter() {
           console.log("isEnglish:", isEnglish);
           const firstP = allP.childNodes[0]
           const secondeP = allP.childNodes[1]
-          let enColorDefault = ''
-          if (firstP) {
-            if (firstP.childNodes[0].nodeName === 'SPAN') {
-              enColorDefault = firstP.childNodes[0].style.color
-            } else {
-              enColorDefault = '#000000'
-            }
-          }
-          let cnColorDefault = ''
-          if (secondeP) {
-            if (secondeP.childNodes[0].nodeName === 'SPAN') {
-              cnColorDefault = secondeP.childNodes[0].style.color
-            } else {
-              cnColorDefault = '#000000'
-            }
-          }
+          let enColorDefault = firstP?.childNodes[0]?.nodeName === 'SPAN' ? firstP.childNodes[0].style.color : '#000000'
+          let cnColorDefault = secondeP?.childNodes[0]?.nodeName === 'SPAN' ? secondeP.childNodes[0].style.color : '#000000'
 
           if (isEnglish) {
             let newP = p.innerText
