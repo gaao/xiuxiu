@@ -40,6 +40,25 @@ function changeCharacter() {
           let isEnglish = isAllEnglish(p.innerText)
           // let isChinese = isAllChinese(p.innerText)
           console.log("isEnglish:", isEnglish);
+          const firstP = allP.childNodes[0]
+          const secondeP = allP.childNodes[1]
+          let enColorDefault = ''
+          if (firstP) {
+            if (firstP.childNodes[0].nodeName === 'SPAN') {
+              enColorDefault = firstP.childNodes[0].style.color
+            } else {
+              enColorDefault = '#000000'
+            }
+          }
+          let cnColorDefault = ''
+          if (secondeP) {
+            if (secondeP.childNodes[0].nodeName === 'SPAN') {
+              cnColorDefault = secondeP.childNodes[0].style.color
+            } else {
+              cnColorDefault = '#000000'
+            }
+          }
+
           if (isEnglish) {
             let newP = p.innerText
               .replace(/“/g, '"')
@@ -50,7 +69,11 @@ function changeCharacter() {
               .replace(/；/g, ";")
               .replace(/，/g, ",")
             let newNode = document.createElement('p')
-            newNode.textContent = newP
+            let newSpan = document.createElement('span')
+            newNode.style.textAlign = 'left'
+            newSpan.style.color = enColorDefault
+            newSpan.textContent = newP
+            newNode.appendChild(newSpan)
             allP.replaceChild(newNode, p)
           }
           else {
@@ -63,7 +86,11 @@ function changeCharacter() {
               .replace(/;/g, '；')
               .replace(/,/g, '，')
             let newNode1 = document.createElement('p')
-            newNode1.textContent = newP1
+            let newSpan1 = document.createElement('span')
+            newNode1.style.textAlign = 'left'
+            newSpan1.style.color = cnColorDefault
+            newSpan1.textContent = newP1
+            newNode1.appendChild(newSpan1)
             allP.replaceChild(newNode1, p)
           }
         }
