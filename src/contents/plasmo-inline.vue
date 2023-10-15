@@ -6,7 +6,7 @@ import type {
 } from "plasmo"
 
 export const config: PlasmoCSConfig = {
-  matches: ["https://www.plasmo.com/*"]
+  matches: ["https://www.plasmo.com/"]
 }
 
 const getInlineAnchor: PlasmoGetInlineAnchor = () =>
@@ -34,6 +34,6 @@ export default {
 <template>
   <div>
     <span style="color: red">{{ count }}</span>
-    <button @click="count++">Many Myths are based on truth</button>
+    <button @click="count++">Many Myths are based on truth1</button>
   </div>
 </template>

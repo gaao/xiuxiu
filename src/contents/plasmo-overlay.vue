@@ -9,7 +9,7 @@ import cssText from "data-text:~/contents/plasmo-overlay.css"
 import type { PlasmoCSConfig, PlasmoGetStyle } from "plasmo"
 
 export const config: PlasmoCSConfig = {
-  matches: ["https://www.plasmo.com/*"]
+  matches: ["https://www.plasmo.com/"]
 }
 
 const getStyle: PlasmoGetStyle = () => {

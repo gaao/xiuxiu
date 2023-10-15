@@ -1,13 +1,19 @@
 <template>
   <div>
     <button @click="changeCharacter" title="(“”‘’：，；;)">替换中英文符号</button>
+    <button @click="clg">clg</button>
   </div>
 </template>
 <script setup lang="ts">
 import { reactive, ref } from "vue"
 import type { App } from "vue"
 import type { PlasmoCSConfig } from "plasmo"
+// import popup from "~popup.vue";
+import popup from "~popup.vue";
+function clg() {
+  console.log(111,popup);
 
+}
 const config: PlasmoCSConfig = {
   matches: ["*://xiumi.us/studio/*"],
 }

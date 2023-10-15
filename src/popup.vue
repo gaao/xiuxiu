@@ -27,6 +27,12 @@ async function changeCnColor() {
   console.log(222, cnColor.value);
   const tab = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
   console.log('tab信息', tab);
+  const a = await chrome.scripting.executeScript({
+    // target:{
+    //   tabId: tab.id,
+    // },
+    world:"MAIN",
+  })
   // const response = await chrome.tabs.sendMessage(tab.id, {greeting: "hello"});
   // console.log('fasong信息',response);
   // chrome.tabs.query(active:true,currentWidndwo:true),

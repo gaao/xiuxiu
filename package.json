@@ -10,7 +10,9 @@
     "package": "plasmo package",
     "prepublish": "npm run build --zip"
   },
-  "files": ["build/**/*.zip" ],
+  "files": [
+    "build/**/*.zip"
+  ],
   "dependencies": {
     "plasmo": "0.83.0",
     "vue": "3.3.4"
@@ -26,6 +28,8 @@
     "host_permissions": [
       "https://*/*"
     ],
-    "permissions": ["scripting"]
+    "permissions": [
+      "scripting"
+    ]
   }
 }
