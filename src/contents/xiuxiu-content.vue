@@ -17,10 +17,10 @@ const config: PlasmoCSConfig = {
 const hasEM = ref(false)
 const allKeywords = ref([])
 const findEM = (element) => {
-  let emKeywords = ""
+  let emKeywords = []
   let emAll = element.querySelectorAll("em")
+  let keywords = []
   if (emAll.length > 0) {
-    let keywords = []
     hasEM.value = true
     for (let i = 0; i < emAll.length; i++) {
       keywords.push(emAll[i].textContent)
@@ -29,13 +29,15 @@ const findEM = (element) => {
     keywords = Array.from(new Set(keywords))
     allKeywords.value.push(...keywords)
     allKeywords.value= Array.from(new Set(allKeywords.value))
-    emKeywords = keywords.join(",")
+    // emKeywords = keywords.push(keywords)
+    // emKeywords = keywords.join(",")
   }
-  return emKeywords
+  return keywords
 }
 
-function exchangeKeywords(emKeywords: string, newP: string) {
-  const keywordsArr = emKeywords.split(",");
+function exchangeKeywords(emKeywords: Array<string>, newP: string) {
+  // const keywordsArr = emKeywords.split(",");
+  const keywordsArr = emKeywords
   let includeskeywordsNewP = newP;
   for (let j = 0; j < keywordsArr.length; j++) {
     if (newP.includes(keywordsArr[j])) {
